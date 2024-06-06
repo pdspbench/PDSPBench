@@ -1,0 +1,6 @@
+[locally]
+localhost ansible_host=localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3
+[alpha]
+pc555.emulab.net
+[betas]
+pc546.emulab.net

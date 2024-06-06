@@ -1,0 +1,6 @@
+---
+
+- name: Delete the grafana folder
+  file:
+    path: "{{INSTALLATION_DIR}}/grafana-9.3.6"
+    state: absent

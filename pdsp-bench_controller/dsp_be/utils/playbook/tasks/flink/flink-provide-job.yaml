@@ -1,0 +1,8 @@
+---
+
+- name: Provide job to flink
+  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/flink-1.16.2/bin/flink run -c {{ job_program }} {{ INSTALLATION_DIR }}/flink-1.16.2/bin/dsp_jobs-1.0-SNAPSHOT.jar -parallelism {{ job_parallelization }} -mode {{ job_mode }} -input {{ job_input }} -output {{ job_output }} -query {{ job_query_number }} -kafka-server {{ producer_bootstrap_server }} -size {{ job_window_size }} -slide {{ job_window_slide_size }} -waitTimeToCancel {{ job_run_time }} -lateness {{google_lateness}} -popularityThreshold {{job_threshold}}"
+  async: 45000
+  poll: 0
+  tags:
+    - start

@@ -1,0 +1,9 @@
+---
+- name: Start job manager(./jobmanager.sh)
+  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/flink-1.16.2/bin/jobmanager.sh stop-all"
+  async: 45000
+  poll: 0
+
+
+#- name: Run the cmd
+#  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/test.sh"

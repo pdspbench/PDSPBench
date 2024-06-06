@@ -1,0 +1,16 @@
+---
+
+- name: Copy producer file to remote machines
+  ansible.builtin.copy:
+    src: "{{ BASE_DIR }}/infra/producer_files/custom_producer.py"
+    dest: "{{ INSTALLATION_DIR }}"
+  tags:
+    -copy-producer-to-remote
+
+- name: Copy producer dependencies to remote machines
+  ansible.builtin.copy:
+    src: "{{ BASE_DIR }}/infra/producer_files/smart-grid.xlsx"
+    dest: "{{ INSTALLATION_DIR }}"
+  tags:
+    -copy-producer_dependencies-to-remote
+

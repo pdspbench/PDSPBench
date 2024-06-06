@@ -1,0 +1,7 @@
+---
+
+- name: Copy job JAR to Flink in Remote machine.
+  ansible.builtin.copy:
+    src: "{{ BASE_DIR }}/infra/flink_files/dsp_jobs-1.0-SNAPSHOT.jar"
+    dest: "{{ INSTALLATION_DIR }}/flink-1.16.0/bin"
+  

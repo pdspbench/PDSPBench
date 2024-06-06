@@ -1,0 +1,10 @@
+alpha:
+  hosts:
+    node0.fix2.maki-test-pg0.utah.cloudlab.us:
+      ansible_user: shu7812
+      ansible_ssh_private_key_file: ~/.ssh/id_rsa
+betas:
+  hosts:
+    node1.fix2.maki-test-pg0.utah.cloudlab.us:
+      ansible_user: shu7812
+      ansible_ssh_private_key_file: ~/.ssh/id_rsa

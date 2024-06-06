@@ -1,0 +1,17 @@
+---
+- name: Stop JM in alpha node
+  hosts: alpha
+  gather_facts: yes
+  become: True
+  become_method: sudo
+  tasks:
+    - include_tasks: "tasks/flink/complex/flink-job-manager-stop.yaml"
+      tags:
+        - "flink-start"
+    - include_tasks: "tasks/prometheus/prometheus-stop.yaml"
+      tags:
+        - "prometheus-start"
+    
+    - include_tasks: "tasks/grafana/grafana-stop.yaml"
+      tags:
+        - "grafana-start"

@@ -1,0 +1,6 @@
+---
+
+- name: Delete the prometheus folder
+  file:
+    path: "{{ INSTALLATION_DIR }}/prometheus-2.40.3.linux-amd64"
+    state: absent

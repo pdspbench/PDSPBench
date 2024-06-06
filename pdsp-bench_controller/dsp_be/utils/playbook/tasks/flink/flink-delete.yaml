@@ -1,0 +1,6 @@
+---
+
+- name: Delete the flink file
+  file:
+    path: "{{ INSTALLATION_DIR }}"
+    state: absent

@@ -1,0 +1,1 @@
+hardware_type=c6525-100g

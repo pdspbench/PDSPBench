@@ -1,0 +1,21 @@
+---
+
+- name: Copy temporary config to Flink.
+  template: src="{{ BASE_DIR }}/infra/flink_files/flink-conf.yaml" dest="{{ INSTALLATION_DIR }}/flink-1.16.2/conf" mode=0777
+
+#- name: Copy oshi jar
+#  ansible.builtin.copy:
+#    src: "{{ BASE_DIR }}/infra/flink_files/oshi-core-6.1.5.jar"
+#    dest: "{{ INSTALLATION_DIR }}/flink-1.16.0/lib"
+    
+
+#- name: Copy jna jar
+#  ansible.builtin.copy:
+#    src: "{{ BASE_DIR }}/infra/flink_files/jna-5.10.0.jar"
+#    dest: "{{ INSTALLATION_DIR }}/flink-1.16.0/lib"
+    
+
+#- name: Copy jna-platform jar
+#  ansible.builtin.copy:
+#    src: "{{ BASE_DIR }}/infra/flink_files/jna-platform-5.10.0.jar"
+#    dest: "{{ INSTALLATION_DIR }}/flink-1.16.0/lib"

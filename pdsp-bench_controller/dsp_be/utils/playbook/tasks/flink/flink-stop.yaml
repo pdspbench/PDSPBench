@@ -1,0 +1,16 @@
+---
+- name: Stop all existing Taskmanagers
+  shell: "{{ INSTALLATION_DIR }}/flink-1.16.0/bin/taskmanager.sh stop-all"
+  tags:
+    - stop-all
+    
+- name: Stop the flink cluster 
+  shell: "{{ INSTALLATION_DIR }}/flink-1.16.0/bin/stop-cluster.sh"
+  tags:
+    - start
+
+- name: Stopping the flink cluster by port number.
+  shell: fuser -k -n tcp 8086
+  ignore_errors: true
+  tags:
+    - stop

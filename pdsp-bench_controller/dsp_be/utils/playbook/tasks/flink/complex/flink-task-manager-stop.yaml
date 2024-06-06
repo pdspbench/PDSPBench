@@ -1,0 +1,3 @@
+---
+- name: Start task manager(./taskmanager.sh)
+  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/flink-1.16.2/bin/taskmanager.sh stop-all"

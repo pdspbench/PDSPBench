@@ -1,0 +1,12 @@
+---
+- name: Delete last kafka topics
+  hosts: alpha
+  gather_facts: yes
+  become: True
+  become_method: sudo
+  tasks:
+   
+    - include_tasks: "tasks/kafka/delete-topic.yaml"
+      tags:
+        - "delete-topic"
+    

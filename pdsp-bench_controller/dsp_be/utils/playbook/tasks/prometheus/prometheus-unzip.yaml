@@ -1,0 +1,6 @@
+---
+
+- name: Uncompress Prometheus.
+  unarchive: src="{{ BASE_DIR }}/infra/prometheus_files/prometheus-2.40.3.linux-amd64.tar.gz" dest="{{ INSTALLATION_DIR }}"
+  tags:
+    - prometheus

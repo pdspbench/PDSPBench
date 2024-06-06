@@ -1,0 +1,10 @@
+---
+- name: Start TM in a beta nodes
+  hosts: betas
+  gather_facts: yes
+  become: True
+  become_method: sudo
+  tasks:
+    - include_tasks: "tasks/flink/complex/flink-task-manager-stop.yaml"
+      tags:
+        - "flink-start"

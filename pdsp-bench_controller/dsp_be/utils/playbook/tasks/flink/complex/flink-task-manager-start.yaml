@@ -1,0 +1,5 @@
+---
+- name: Start task manager(./taskmanager.sh)
+  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/flink-1.16.2/bin/taskmanager.sh start-foreground"
+  async: 45000
+  poll: 0

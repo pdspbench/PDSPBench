@@ -1,0 +1,13 @@
+---
+
+# - name: Start Prometheus
+#   command: "sudo /bin/bash {{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64/prometheus --storage.tsdb.path={{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64/data --config.file={{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64/prometheus.yml"
+#   async: 45000
+#   poll: 0
+
+- name: Start Prometheus.
+  shell: "sudo {{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64/prometheus --storage.tsdb.path={{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64/data --config.file={{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64/prometheus.yml"
+  ignore_errors: true
+  timeout: 10
+  tags:
+    - start

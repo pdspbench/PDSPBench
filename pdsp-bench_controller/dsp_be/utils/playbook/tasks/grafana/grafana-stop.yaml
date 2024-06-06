@@ -1,0 +1,7 @@
+---
+
+- name: Stop Grafana.
+  shell: sudo fuser -k -n tcp 3000
+  ignore_errors: true
+  tags:
+    - stop

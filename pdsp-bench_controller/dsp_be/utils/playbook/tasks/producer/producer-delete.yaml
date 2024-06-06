@@ -1,0 +1,6 @@
+---
+
+- name: Delete producer file
+  file:
+    path: "{{ INSTALLATION_DIR }}/custom_producer.py"
+    state: absent

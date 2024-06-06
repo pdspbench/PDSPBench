@@ -1,0 +1,29 @@
+---
+- name: Install and start JM in a node
+  hosts: alpha
+  gather_facts: yes
+  become: True
+  become_method: sudo
+  tasks:
+    
+    - include_tasks: "tasks/flink/complex/flink-config-setup.yaml"
+      tags:
+        - "flink-config-setup"
+    - include_tasks: "tasks/flink/complex/flink-job-manager-start.yaml"
+      tags:
+        - "flink-start"
+    - include_tasks: "tasks/prometheus/prometheus-config-setup.yaml"
+      tags:
+        - "prometheus-config-setup"
+    - include_tasks: "tasks/prometheus/prometheus-start.yaml"
+      tags:
+        - "prometheus-start"
+    - include_tasks: "tasks/grafana/grafana-unzip.yaml"
+      tags:
+        - "grafana-unzip"
+    - include_tasks: "tasks/grafana/grafana-start.yaml"
+      tags:
+        - "grafana-start"
+    - include_tasks: "tasks/kafka/kafka-start.yaml"
+      tags:
+        - "kafka-start"

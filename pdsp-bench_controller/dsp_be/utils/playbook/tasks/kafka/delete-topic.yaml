@@ -1,0 +1,12 @@
+- name: Delete input topic
+  shell: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/kafka-topics.sh --delete  --topic {{ job_input }} --bootstrap-server {{ producer_bootstrap_server }}"
+  ignore_errors: true
+  tags:
+    - delete-topic-in
+
+
+- name: Delete output topic
+  shell: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/kafka-topics.sh --delete  --topic {{ job_output }} --bootstrap-server {{ producer_bootstrap_server }}"
+  ignore_errors: true
+  tags:
+    - delete-topic-out

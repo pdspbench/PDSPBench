@@ -1,0 +1,17 @@
+---
+- name: Provide job to cluster
+  hosts: alpha
+  gather_facts: yes
+  become: True
+  become_method: sudo
+  tasks:
+   
+    - include_tasks: "tasks/kafka/kafka-create-topic.yaml"
+      tags:
+        - "kafka-create-topic"
+    - include_tasks: "tasks/flink/flink-provide-job.yaml"
+      tags:
+        - "flink-provide-job"
+    - include_tasks: "tasks/producer/producer-run.yaml"
+      tags:
+        - "producer-run"

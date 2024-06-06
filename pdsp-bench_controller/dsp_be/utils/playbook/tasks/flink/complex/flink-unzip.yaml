@@ -1,0 +1,10 @@
+---
+- name: Create a playground directory
+  file:
+    path: "{{ INSTALLATION_DIR }}"
+    state: directory
+
+- name: Uncompress Apache Flink.
+  unarchive: src="{{ BASE_DIR }}/infra/flink_files/flink-1.16.0-bin-scala_2.12.tgz" dest="{{ INSTALLATION_DIR }}"
+  tags:
+    - flink uncompress

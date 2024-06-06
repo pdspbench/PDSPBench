@@ -1,0 +1,18 @@
+---
+
+- name: Copy defaults.ini files
+  template: src="{{ BASE_DIR }}/infra/grafana_files/defaults.ini" dest="{{ INSTALLATION_DIR }}/grafana-9.3.6/conf" mode=0777
+
+- name: Copy datasource yaml files
+  template: src="{{ BASE_DIR }}/infra/grafana_files/datasource.yaml" dest="{{ INSTALLATION_DIR }}/grafana-9.3.6/conf/provisioning/datasources" mode=0777
+
+- name: Copy dashboard provider files
+  template: src="{{ BASE_DIR }}/infra/grafana_files/default.yaml" dest="{{ INSTALLATION_DIR }}/grafana-9.3.6/conf/provisioning/dashboards" mode=0777
+
+- name: Creates panelpath directory
+  file:
+    path: "{{ INSTALLATION_DIR }}/grafana-9.3.6/conf/provisioning/dashboards/panelPath"
+    state: directory
+
+- name: Copy cluster.json files
+  template: src="{{ BASE_DIR }}/infra/grafana_files/cluster.json" dest="{{ INSTALLATION_DIR }}/grafana-9.3.6/conf/provisioning/dashboards/panelPath" mode=0777

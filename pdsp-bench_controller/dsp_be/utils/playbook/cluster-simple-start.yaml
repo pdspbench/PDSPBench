@@ -1,0 +1,14 @@
+---
+- name: Start all components
+  hosts: locally
+  gather_facts: false
+  tasks:
+    - include_tasks: "tasks/flink/flink-start.yaml"
+      tags:
+        - "flink-start"
+    - include_tasks: "tasks/prometheus/prometheus-start.yaml"
+      tags:
+        - "prometheus-start"
+    - include_tasks: "tasks/grafana/grafana-start.yaml"
+      tags:
+        - "grafana-start"

@@ -1,0 +1,10 @@
+---
+- name: Stop all existing Taskmanagers
+  shell: "{{ INSTALLATION_DIR }}/flink-1.16.2/bin/taskmanager.sh stop-all"
+  tags:
+    - stop-all
+
+- name: Run the cluster server
+  shell: "{{ INSTALLATION_DIR }}/flink-1.16.2/bin/start-cluster.sh"
+  tags:
+    - start

@@ -1,0 +1,18 @@
+locally:
+  hosts:
+    localhost:
+      ansible_host: localhost
+      ansible_connection: local
+      ansible_python_interpreter: /usr/bin/python3
+alpha:
+  hosts:
+    pc555.emulab.net:
+      host_key_checking: false
+      ansible_user: shu7812
+      ansible_ssh_private_key_file: /home/legion/.ssh/id_rsa
+betas:
+  hosts:
+    pc546.emulab.net:
+      host_key_checking: false
+      ansible_user: shu7812
+      ansible_ssh_private_key_file: /home/legion/.ssh/id_rsa

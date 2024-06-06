@@ -1,0 +1,13 @@
+---
+
+# - name: Start Grafana.
+#   command: "sudo /bin/bash {{ INSTALLATION_DIR }}/grafana-9.3.6/bin/grafana-server -homepath {{INSTALLATION_DIR}}/grafana-9.3.6"
+#   async: 45000
+#   poll: 0
+
+- name: Start Grafana.
+  shell: "sudo {{ INSTALLATION_DIR }}/grafana-9.3.6/bin/grafana-server -homepath {{INSTALLATION_DIR}}/grafana-9.3.6"
+  ignore_errors: true
+  timeout: 30
+  tags:
+    - start

@@ -1,0 +1,16 @@
+---
+
+- name: Delete the kafka folder
+  file:
+    path: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1"
+    state: absent
+
+- name: Delete the producer folder
+  file:
+    path: "{{ INSTALLATION_DIR }}/custom_producer.py"
+    state: absent
+
+- name: Delete the producer additional folders
+  file:
+    path: "{{ INSTALLATION_DIR }}/data"
+    state: absent

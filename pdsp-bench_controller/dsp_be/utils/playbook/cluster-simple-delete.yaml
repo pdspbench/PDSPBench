@@ -1,0 +1,32 @@
+---
+- name: Delete all components
+  hosts: alpha
+  gather_facts: false
+  tasks:
+    - include_tasks: "tasks/flink/flink-stop.yaml"
+      tags:
+        - "flink-stop"
+    - include_tasks: "tasks/flink/flink-delete.yaml"
+      tags:
+        - "flink-delete"
+    - include_tasks: "tasks/prometheus/prometheus-stop.yaml"
+      tags:
+        - "prometheus-stop"
+    - include_tasks: "tasks/prometheus/prometheus-delete.yaml"
+      tags:
+        - "prometheus-delete"
+    - include_tasks: "tasks/grafana/grafana-stop.yaml"
+      tags:
+        - "grafana-stop"
+    - include_tasks: "tasks/grafana/grafana-delete.yaml"
+      tags:
+        - "grafana-delete"
+    - include_tasks: "tasks/kafka/kafka-stop.yaml"
+      tags:
+        - "kafka-stop"
+    - include_tasks: "tasks/kafka/kafka-delete.yaml"
+      tags:
+        - "kafka-delete"
+    - include_tasks: "tasks/producer/producer-delete.yaml"
+      tags:
+        - "producer delete"

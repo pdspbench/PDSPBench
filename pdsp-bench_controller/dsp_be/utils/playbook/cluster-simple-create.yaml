@@ -1,0 +1,29 @@
+---
+- name: Install all components of a cluster
+  hosts: locally
+  gather_facts: false
+  tasks:
+    - include_tasks: "tasks/flink/flink-unzip.yaml"
+      tags:
+        - "flink-unzip"
+    - include_tasks: "tasks/flink/flink-config-setup.yaml"
+      tags:
+        - "flink-config-setup"
+    - include_tasks: "tasks/flink/flink-start.yaml"
+      tags:
+        - "flink-start"
+    - include_tasks: "tasks/prometheus/prometheus-unzip.yaml"
+      tags:
+        - "prometheus-unzip"
+    - include_tasks: "tasks/prometheus/prometheus-config-setup.yaml"
+      tags:
+        - "prometheus-config-setup"
+    - include_tasks: "tasks/prometheus/prometheus-start.yaml"
+      tags:
+        - "prometheus-start"
+    - include_tasks: "tasks/grafana/grafana-unzip.yaml"
+      tags:
+        - "grafana-unzip"
+    - include_tasks: "tasks/grafana/grafana-start.yaml"
+      tags:
+        - "grafana-start"

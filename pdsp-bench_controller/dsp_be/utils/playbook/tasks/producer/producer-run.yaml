@@ -1,0 +1,19 @@
+---
+
+- name: Run producer file in remote machines
+  shell: sudo timeout {{ job_run_time }} python3 {{ INSTALLATION_DIR }}/custom_producer.py --event_per_second {{ producer_event_per_second }} --app_type {{ producer_program }} --kafka_bootstrap_server {{ producer_bootstrap_server }} --kafka_input_topic {{ job_input }}
+  ignore_errors: true
+  timeout: 20
+
+- name: Delete content & directory
+  ansible.builtin.file:
+    state: absent
+    path: /users/shu7812/.ansible/tmp
+
+
+- name: Delete content & directory
+  ansible.builtin.file:
+    state: absent
+    path: /users/shu7812/.ansible/tmp
+  
+  

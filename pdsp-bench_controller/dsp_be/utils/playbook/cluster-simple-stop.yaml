@@ -1,0 +1,17 @@
+---
+- name: Stop all components
+  hosts: alpha
+  gather_facts: false
+  tasks:
+    - include_tasks: "tasks/flink/flink-stop.yaml"
+      tags:
+        - "flink-stop"
+    - include_tasks: "tasks/prometheus/prometheus-stop.yaml"
+      tags:
+        - "prometheus-stop"
+    - include_tasks: "tasks/grafana/grafana-stop.yaml"
+      tags:
+        - "grafana-stop"
+    - include_tasks: "tasks/kafka/kafka-stop.yaml"
+      tags:
+        - "kafka-stop"

@@ -1,0 +1,10 @@
+apiVersion: 1
+
+providers:
+  - name: FlinkDashboard    # A uniquely identifiable name for the provider
+    folder: Services # The folder where to place the dashboards
+    type: file
+    options:
+      path:  {{ INSTALLATION_DIR }}/grafana-9.3.6/conf/provisioning/dashboards/panelPath
+            # Default path for Windows: C:/Program Files/GrafanaLabs/grafana/public/dashboards
+            # Default path for Linux is: /var/lib/grafana/dashboards

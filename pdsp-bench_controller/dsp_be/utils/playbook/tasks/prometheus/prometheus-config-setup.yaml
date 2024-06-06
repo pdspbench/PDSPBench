@@ -1,0 +1,8 @@
+---
+   
+
+- name: Copy config to prometheus
+  ansible.builtin.copy:
+    src: "{{ BASE_DIR }}/infra/prometheus_files/prometheus.yml"
+    dest: "{{ INSTALLATION_DIR }}/prometheus-2.42.0.linux-amd64"
+    

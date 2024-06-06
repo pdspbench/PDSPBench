@@ -1,0 +1,14 @@
+---
+
+- name: Kafka stop
+  shell: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/kafka-server-stop.sh"
+  ignore_errors: true
+  tags:
+    - kafka-stop
+
+- name: Zookeeper stop
+  shell: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/zookeeper-server-stop.sh"
+  ignore_errors: true
+  tags:
+    - zookeeper-stop
+

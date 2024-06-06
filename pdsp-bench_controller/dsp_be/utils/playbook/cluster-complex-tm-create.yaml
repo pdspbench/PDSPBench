@@ -1,0 +1,13 @@
+---
+- name: Install and start TM in a node
+  hosts: betas
+  gather_facts: yes
+  become: True
+  become_method: sudo
+  tasks:
+    - include_tasks: "tasks/flink/complex/flink-config-setup.yaml"
+      tags:
+        - "flink-config-setup"
+    - include_tasks: "tasks/flink/complex/flink-task-manager-start.yaml"
+      tags:
+        - "flink-start"

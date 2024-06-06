@@ -1,0 +1,14 @@
+---
+
+- name: Create input topic
+  shell: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/kafka-topics.sh --topic {{ job_input }} --create --partitions 8  --bootstrap-server {{ producer_bootstrap_server }}"
+  ignore_errors: true
+  tags:
+    - create-topic-in
+
+
+- name: Create output topic
+  shell: "{{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/kafka-topics.sh --topic {{ job_output }} --create   --bootstrap-server {{ producer_bootstrap_server }}"
+  ignore_errors: true
+  tags:
+    - create-topic-out

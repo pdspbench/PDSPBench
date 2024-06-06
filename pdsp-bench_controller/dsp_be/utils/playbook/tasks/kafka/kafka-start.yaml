@@ -1,0 +1,33 @@
+---
+
+- name: Zookeeper start
+  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/zookeeper-server-start.sh {{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/config/zookeeper.properties"
+  async: 45000
+  poll: 0
+  tags:
+    - zookeeper-start
+
+# - name: Kafka stop with shell script
+#   shell: "sudo /bin/bash {{ INSTALLATION_DIR }}/kafka_2.12-3.4.0/bin/kafka-server-stop.sh"
+#   ignore_errors: true
+#   tags:
+#     - kafka-stop
+
+# - name: Kafka stop with fuser
+#   shell: "sudo fuser -k -n tcp 9092"
+#   ignore_errors: true
+#   tags:
+#     - kafka-stop
+
+- name: 5 second pause
+  pause:
+    seconds: 5
+
+- name: Kafka start
+  command: "sudo /bin/bash {{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/bin/kafka-server-start.sh {{ INSTALLATION_DIR }}/kafka_2.12-3.4.1/config/server.properties"
+  async : 45000
+  poll: 0
+  tags:
+    - kafka-start
+
+
