@@ -1,0 +1,49 @@
+enumerationStrategy,learnedCostModels,evaluationMetric,testTemplateName,50percentile,95percentile,99percentile
+rulebased,Linear Regression,latency,2-Filters,14.1574,18.4001,23.8353
+rulebased,Linear Regression,latency,3-Filters,13.8362,20.8009,22.5923
+rulebased,Linear Regression,latency,4-Filters,15.8240,23.9371,28.7444
+rulebased,Linear Regression,latency,4-way-join,3.1022,3.7221,5.9210
+rulebased,Linear Regression,latency,5-way-join,3.3119,4.2241,5.33732
+rulebased,Linear Regression,latency,6-way-join,3.4512,4.1180,6.3929
+rulebased,Linear Regression,throughput,2-Filters,8.3442,80.8929,142.5799
+rulebased,Linear Regression,throughput,3-Filters,11.0591,97.0585,217.1378
+rulebased,Linear Regression,throughput,4-Filters,13.2015,112.5679,189.0752
+rulebased,Linear Regression,throughput,4-way-join,5.0319,47.8102,88.4154
+rulebased,Linear Regression,throughput,5-way-join,5.5601,55.7913,127.3743
+rulebased,Linear Regression,throughput,6-way-join,6.2567,65.5211,130.4856
+rulebased,MLP,latency,2-Filters,6.4088,16.5594,36.2904
+rulebased,MLP,latency,3-Filters,8.4733,71.7497,99.4365
+rulebased,MLP,latency,4-Filters,9.1898,77.9756,102.9701
+rulebased,MLP,latency,4-way-join,300.6008,56516.2363,138297.8741
+rulebased,MLP,latency,5-way-join,1660.4362,98197.7183,166877.1263
+rulebased,MLP,latency,6-way-join,9019.4243,126464.2086,246709.9866
+rulebased,MLP,throughput,2-Filters,1.5483,20.9503,47.7063
+rulebased,MLP,throughput,3-Filters,16.8942,132.5974,211.2437
+rulebased,MLP,throughput,4-Filters,2.9535,115.1640,198.6268
+rulebased,MLP,throughput,4-way-join,3268.3876,515142.6801,2576261.303
+rulebased,MLP,throughput,5-way-join,36604.8077,1851197.528,5695723.857
+rulebased,MLP,throughput,6-way-join,106763.273,4588792.719,11631971.71
+rulebased,Random Forest,latency,2-Filters,9.7729,19.3708,50.3532
+rulebased,Random Forest,latency,3-Filters,9.3478,19.0254,63.5302
+rulebased,Random Forest,latency,4-Filters,10.0019,14.8808,65.0284
+rulebased,Random Forest,latency,4-way-join,4.3908,24.9211,34.2119
+rulebased,Random Forest,latency,5-way-join,4.7157,33.7364,84.9110
+rulebased,Random Forest,latency,6-way-join,6.2541,59.1294,112.9102
+rulebased,Random Forest,throughput,2-Filters,5.8764,41.4103,119.8321
+rulebased,Random Forest,throughput,3-Filters,13.1623,114.4548,141.9549
+rulebased,Random Forest,throughput,4-Filters,16.4180,90.1837,110.3911
+rulebased,Random Forest,throughput,4-way-join,3.1090,24.5410,51.0777
+rulebased,Random Forest,throughput,5-way-join,3.7744,33.4197,74.8934
+rulebased,Random Forest,throughput,6-way-join,4.5140,48.0688,88.0371
+rulebased,GNN,latency,2-Filters,1.2244,2.1522,3.1918
+rulebased,GNN,latency,3-Filters,1.2353,2.5549,3.4174
+rulebased,GNN,latency,4-Filters,1.2373,2.9043,3.9678
+rulebased,GNN,latency,4-way-join,1.3470,2.9257,4.7916
+rulebased,GNN,latency,5-way-join,1,5721,4,5948,6,6824
+rulebased,GNN,latency,6-way-join,1,9471,6,2526,7,8288
+rulebased,GNN,throughput,2-Filters,1.4086,3.5046,9.4632
+rulebased,GNN,throughput,3-Filters,1.5716,3.9642,11.2127
+rulebased,GNN,throughput,4-Filters,1.6404,5.3128,28.4360
+rulebased,GNN,throughput,4-way-join,1.9277,6.5543,12.2588
+rulebased,GNN,throughput,5-way-join,2.9302,16.8229,32.4690
+rulebased,GNN,throughput,6-way-join,6.1989,36.2925,72.5398

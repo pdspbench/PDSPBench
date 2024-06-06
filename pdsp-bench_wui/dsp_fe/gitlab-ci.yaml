@@ -1,0 +1,44 @@
+# CI for deploying Vue applications
+
+# As we are running docker commands in gitlab jobs(inherintly they run inside gitlab-runner docker image) we
+# need to use the dind(Docker-in-Docker) service
+#services:
+#  - docker:20.10.16-dind
+
+# Defines the pipeline stages(refer to https://docs.gitlab.com/ee/ci/yaml/) 
+stages:
+- push
+- run
+
+# Defines a job name 'build_vue_app_and_push' with stage 'push'
+# Does the following steps:
+# Login to docker in cloudlab
+# Building the vue app image with a repository name(To uniquely identify a docker image)
+# Push the built docker image to the repository
+build_vue_app_and_push:
+  stage: push
+  #services:
+  #  - docker:18.09-dind
+  script:
+    - sudo docker login -u $DOCKER_USERNAME  -p $DOCKER_PASSWORD $CLOUDLAB_CI_REGISTRY:5000
+    - sudo docker build -t $CLOUDLAB_CI_REGISTRY:5000/dsp/dsp_fe .
+    - sudo docker push $CLOUDLAB_CI_REGISTRY:5000/dsp/dsp_fe
+  only:
+    - main
+
+
+# Defines a job name 'run_vue_image' associated with stage 'run'
+# Does the following steps:
+# Install openssh in Alpine Linux(Linux distribution) with size of 5MB only
+# Copy the SSH KEYS from Gitlab CI variables to Alpine linux
+# Make an SSH connection to cloudlab node which runs docker
+# And run dsp_fe docker image
+run_vue_image:
+  image: alpine:latest
+  stage: run
+  script:
+    - apk add --no-cache openssh
+    - echo "$PARTY_PRIVATE_KEY" >> ~/.ssh/id_rsa
+    - echo "$PARTY_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
+    - ssh -p "$CLOUDLAB_NODE_SSH_PORT_NO" $CLOUDLAB_USERNAME@$CLOUDLAB_CI_REGISTRY >'docker pull $CLOUDLAB_CI_REGISTRY:5000/dsp/dsp_fe && docker run -d -p 80:80 $CLOUDLAB_CI_REGISTRY:5000/dsp/dsp_fe'
+    

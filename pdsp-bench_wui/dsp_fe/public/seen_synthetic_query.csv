@@ -1,0 +1,33 @@
+enumerationStrategy,learnedCostModels,evaluationMetric,testTemplateName,50percentile,95percentile,99percentile
+rulebased,Linear Regression,latency,Linear,2.6012,14.0731,27.8890
+rulebased,Linear Regression,latency,2-way-join,1.9393,9.0354,15.7358
+rulebased,Linear Regression,latency,3-way-join,1.6621,5.9144,10.4011
+rulebased,Linear Regression,overall,latency,2.0983,10.9378,17.3930
+rulebased,Linear Regression,throughput,Linear,4.5860,99.9363,249.8808
+rulebased,Linear Regression,throughput,2-way-join,4.0062,39.5716,79.1662
+rulebased,Linear Regression,throughput,3-way-join,4.4171,31.1299,61.7970
+rulebased,Linear Regression,overall,throughput,3.8196,68.0976,143.1420
+rulebased,MLP,latency,Linear,2.4234,10.8928,15.8855
+rulebased,MLP,latency,2-way-join,1.6843,6.5494,11.8134
+rulebased,MLP,latency,3-way-join,1.5417,4.0790,7.8765
+rulebased,MLP,overall,latency,1.7361,8.4684,17.1069
+rulebased,MLP,throughput,Linear,1.9714,19.6763,60.8436
+rulebased,MLP,throughput,2-way-join,3.2970,28.4198,55.2633
+rulebased,MLP,throughput,3-way-join,4.4909,30.8022,58.9318
+rulebased,MLP,overall,throughput,2.7440,27.1760,58.7154
+rulebased,Random Forest,latency,Linear,1.7657,8.8311,16.1236
+rulebased,Random Forest,latency,2-way-join,1.6005,5.3819,9.1640
+rulebased,Random Forest,latency,3-way-join,1.4743,3.7820,6.1753
+rulebased,Random Forest,overall,latency,1.6234,6.3378,12.9964
+rulebased,Random Forest,throughput,Linear,1.3968,3.3001,14.2683
+rulebased,Random Forest,throughput,2-way-join,2.1336,10.0626,22.2119
+rulebased,Random Forest,throughput,3-way-join,2.3407,17.7415,45.2290
+rulebased,Random Forest,overall,throughput,1.8569,13.3251,38.0540
+rulebased,GNN,latency,Linear,1.2018,2.1537,3.1947
+rulebased,GNN,latency,2-way-join,1.3292,3.1653,4.9056
+rulebased,GNN,latency,3-way-join,1.2674,2.4892,3.9488
+rulebased,GNN,overall,latency,1.3025,3.0649,5.0926
+rulebased,GNN,throughput,Linear,1.2318,2.2146,3.9665
+rulebased,GNN,throughput,2-way-join,1.7022,7.0371,15.4618
+rulebased,GNN,throughput,3-way-join,1.8384,6.7414,13.1048
+rulebased,GNN,overall,throughput,1.5216,5.7652,12.5682
